@@ -6,12 +6,13 @@
     "version": "1.0",
 
     "browser_action": {
+        "default_icon": "favicon.png"
     },
 
     "content_scripts": [
         {
-            "matches": ["http://www.netflix.com/*"],
-            "js": ["underscore-min.js", "index.js"]
+            "matches": ["http://www.netflix.com/*", "https://www.netflix.com/*"],
+            "js": ["underscore-min.js", "god-mode.js"]
         }
     ],
 
