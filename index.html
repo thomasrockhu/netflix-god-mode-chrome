@@ -1,50 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Netflix God Mode Bookmarklet</title>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <style>
-    .jumbotron {background-color: white; margin-top: 40px !important; max-width: 600px; margin: 0 auto; padding: 50px; text-align: center}
-    .jumbotron .lead {margin-bottom: 30px}
-    .footer {text-align: center; color: #4099ff}
-    .footer a {color: #808080}
-  </style>
-</head>
-<body>
-  <div class="jumbotron">
-    <img src="netflix_logo.png">
-    <hr><h2>God Mode Bookmarklet</h2><hr>
-    <p class="lead">Drag the green button to your bookmarks bar.<br>Open Netflix and click on the bookmarklet to view all the movies at once. Enjoy!</p>
-    <a class="btn btn-lg btn-success" role="button" href="
-      javascript:
-      (function() {
-        if(window.location.href.indexOf('netflix.com') === -1) {
-          if (confirm('Please open Netflix and try again. Would you like me to redirect you to netflix.com?')) {
-            window.location.href = 'http://netflix.com'
-          } else { 
-            return false;
-          }
-        }
-        _.map(_.toArray(document.getElementsByClassName('slider')), function(e) {
-          e.parentNode.replaceChild(e.firstChild, e)
-        });
-        _.map(_.union(
-          _.toArray(document.getElementsByClassName('sliderButton')),
-          _.toArray(document.getElementsByClassName('evidence')),
-          _.toArray(document.getElementsByClassName('sharing-prompt')),
-          _.toArray(document.getElementsByClassName('boxShotDivider'))),function(e) {
-            e.parentNode.removeChild(e)
-        });
-      })();">
-      <i class="fa fa-bookmark"></i> Netflix | God Mode
-    </a>
-  </div>
-  <div class="footer">
-    <h4>Disclaimer: Netflix is a registered trademark and has no affiliation to this bookmarklet.</h4>
-    <div><a href="https://github.com/bit2pixel/netflix-god-mode-bookmarklet">Get the source code</a></div>
-    <small><i class="fa fa-twitter"></i> <a href="http://twitter.com/bit2pixel">@bit2pixel</a></small>
-  </div>
-</body>
+  <head>
+    <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+    mixpanel.init("1bb863baebba753ac7623f789280f4d5");</script><!-- end Mixpanel -->>>)}}})
+  </head>
+  <body>
+    <script src="js/mixpanel.js"></script>
+    <script src="js/netflixRedirect.js"></script>
+  </body>
 </html>
